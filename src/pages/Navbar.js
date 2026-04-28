@@ -72,6 +72,10 @@ function Navbar() {
             <span>About</span>
           </NavLink>
 
+          <NavLink to="/internships" className={navClass}>
+            <span>Internships</span>
+          </NavLink>
+
           <NavLink to="/contact" className={navClass}>
             <span>Contact Us</span>
           </NavLink>
@@ -96,6 +100,10 @@ function Navbar() {
 
         <NavLink to="/about" className={mobileNavClass} onClick={closeMenu}>
           About
+        </NavLink>
+
+        <NavLink to="/internships" className={mobileNavClass} onClick={closeMenu}>
+          Internships
         </NavLink>
 
         <NavLink to="/contact" className={mobileNavClass} onClick={closeMenu}>
