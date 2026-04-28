@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
-import Footer from "./Footer";
 import "./HomePage.css";
 
 function HomePage() {
@@ -122,7 +121,6 @@ function HomePage() {
         </section>
       </main>
 
-      <Footer />
     </div>
   );
 }

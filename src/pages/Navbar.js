@@ -48,9 +48,15 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navClass = ({ isActive }) =>
+    isActive ? "gaming-nav-link gaming-nav-link-active" : "gaming-nav-link";
+
+  const mobileNavClass = ({ isActive }) =>
+    isActive ? "gaming-mobile-link gaming-mobile-link-active" : "gaming-mobile-link";
+
   return (
     <header className={`gaming-navbar ${showNavbar ? "show" : "hide"}`}>
-      <div className="gaming-navbar-glow" />
+      <div className="gaming-navbar-scan" />
 
       <nav className="gaming-navbar-inner">
         <Link to="/" className="gaming-logo-link" onClick={closeMenu}>
@@ -58,14 +64,16 @@ function Navbar() {
         </Link>
 
         <div className="gaming-nav-links">
-          <NavLink to="/" className="gaming-nav-link">
-            Home
+          <NavLink to="/" className={navClass} end>
+            <span>Home</span>
           </NavLink>
-          <NavLink to="/about" className="gaming-nav-link">
-            About
+
+          <NavLink to="/about" className={navClass}>
+            <span>About</span>
           </NavLink>
-          <NavLink to="/contact" className="gaming-nav-link">
-            Contact Us
+
+          <NavLink to="/contact" className={navClass}>
+            <span>Contact Us</span>
           </NavLink>
         </div>
 
@@ -82,13 +90,15 @@ function Navbar() {
       </nav>
 
       <div className={`gaming-mobile-menu ${isMenuOpen ? "open" : ""}`}>
-        <NavLink to="/" className="gaming-mobile-link" onClick={closeMenu}>
+        <NavLink to="/" className={mobileNavClass} onClick={closeMenu} end>
           Home
         </NavLink>
-        <NavLink to="/about" className="gaming-mobile-link" onClick={closeMenu}>
+
+        <NavLink to="/about" className={mobileNavClass} onClick={closeMenu}>
           About
         </NavLink>
-        <NavLink to="/contact" className="gaming-mobile-link" onClick={closeMenu}>
+
+        <NavLink to="/contact" className={mobileNavClass} onClick={closeMenu}>
           Contact Us
         </NavLink>
       </div>
